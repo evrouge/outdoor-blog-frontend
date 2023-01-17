@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
+//===========================================
 //===========================================
 const Edit = (props) => {
+
     //======================================================
     //================ Hooks ==============================
     //this gives it an id
@@ -28,11 +31,11 @@ const Edit = (props) => {
                 <summary>Edit Blog</summary>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="image">Image: </label>
-                    <input type="text" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
+                    <input type="url" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
                     <label htmlFor="subject">Subject: </label>
                     <input type="subject" name="subject" value={blogger.subject} onChange={handleChange}></input><br /><br />
                     <label htmlFor="details">Details: </label>
-                    <textarea type="text" name="details" value={blogger.details} onChange={handleChange}></textarea><br /><br />
+                    <textarea type="text" name="details" rows="30" cols="80" value={blogger.details} onChange={handleChange}></textarea><br /><br />
                     <input type="submit"></input>
                 </form>
             </details>

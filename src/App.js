@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Add from './components/Add.js'
 import Edit from './components/Edit.js'
+
+//=======================================================
 //=======================================================
 const App = () => {
+
   //=========================================
   //============= Hooks =====================
   let [blog, setBlog] = useState([]);
@@ -51,9 +54,10 @@ const App = () => {
   }, [])
 
   //=========================================
+  //=========================================
   return (
     <>
-      <h1>App</h1>
+      <h1>Evin's Outdoor Blog</h1>
       <Add handleCreate={handleCreate} />
       <div className="blog">
         {
@@ -63,8 +67,8 @@ const App = () => {
                 <h4>Image: {blogger.image}</h4>
                 <h4>Subject: {blogger.subject}</h4>
                 <h4>Details: {blogger.details}</h4>
-                <Edit handleUpdate={handleUpdate} blogger={blogger} />
-                <button onClick={handleDelete} value={blogger.id}>X</button>
+                <Edit handleUpdate={handleUpdate} blogger={blogger} /><br />
+                <button onClick={handleDelete} value={blogger.id}>Remove Blog</button>
               </div>
             )
           })
