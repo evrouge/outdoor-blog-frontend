@@ -21,7 +21,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -39,31 +38,48 @@
 }
 
 /* me adding styling */
-/* body {
-  background-color: lightblue;
-  text-align: center;
-} */
+body {
+  background-color: lightblue !important;
+  text-align: center !important;
+}
 
 /* card styling */
-/* .card {
+.card {
   align-items: center;
-  border: 1px solid black;
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.9);
   transition: 0.5s;
-  width: 50%;
-  display: grid;
-  flex-direction: row;
-  flex: 1;
-} */
+}
 
-/* .cards {
-  display: flex;
-  flex-direction: row;
-} */
-/*
 .card:hover {
   box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
-} */
-.card {
-  display: block;
 }
+
+.blogger {
+  color: darkgreen;
+  background-color: lightgreen;
+}
+
+/* html tags */
+summary {
+  color: grey;
+}
+
+details {
+  background-color: lightyellow;
+}
+
+
+
+
+/* graveyard:
+
+ .cards {
+  display: flex;
+  flex-direction: row;
+}
+
+/* width: 50%; */
+/* display: grid;
+  flex-direction: row; */
+/* flex: 1; */
+/* display: block; */

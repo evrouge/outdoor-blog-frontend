@@ -74,37 +74,39 @@ const App = () => {
     <>
       <h1>Evin's Outdoor Blog</h1>
       <Add handleCreate={handleCreate} />
-      <div className="">
-        {
-          blog.map((blogger) => {
-            return (
-              <div className="card">
-                <Card style={{ width: '20rem' }}>
-                  <div className="blogger" key={blogger.id}>
-                    <Card.Img src={blogger.image} />
-                    <Card.Body>
-                      <Card.Title>{blogger.subject}</Card.Title>
-                      <Card.Text>
-                        {/* <div className="blogger" key={blogger.id}> */}
-                        <Accordion>
-                          <Accordion.Item eventKey="0">
-                            <Accordion.Header>Read more:</Accordion.Header>
-                            <Accordion.Body>
-                              <h4>{blogger.details}</h4>
-                              <Edit handleUpdate={handleUpdate} blogger={blogger} /><br />
-                              <Button variant="danger" onClick={handleDelete} value={blogger.id}>Remove Blog</Button>
-                            </Accordion.Body>
-                          </Accordion.Item>
-                        </Accordion>
-                        {/* </div> */}
-                      </Card.Text>
-                    </Card.Body>
-                  </div>
-                </Card>
-              </div>
-            )
-          })
-        }
+      <div className="container">
+        <Row sm={1} md="3" className="g-4">
+          {
+            blog.map((blogger) => {
+              return (
+                <div>
+                  <Col>
+                    <Card style={{ width: '20rem' }}>
+                      <div className="blogger" key={blogger.id}>
+                        <Card.Img src={blogger.image} />
+                        <Card.Body>
+                          <Card.Title>{blogger.subject}</Card.Title>
+                          <Card.Text>
+                            <Accordion>
+                              <Accordion.Item eventKey="0">
+                                <Accordion.Header>Read more:</Accordion.Header>
+                                <Accordion.Body>
+                                  <h4>{blogger.details}</h4>
+                                  <Edit handleUpdate={handleUpdate} blogger={blogger} /><br />
+                                  <Button variant="danger" onClick={handleDelete} value={blogger.id}>Remove Blog</Button>
+                                </Accordion.Body>
+                              </Accordion.Item>
+                            </Accordion>
+                          </Card.Text>
+                        </Card.Body>
+                      </div>
+                    </Card>
+                  </Col>
+                </div>
+              )
+            })
+          }
+        </Row>
       </div >
     </>
   )
