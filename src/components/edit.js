@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 //===========================================
 //===========================================
@@ -35,8 +36,8 @@ const Edit = (props) => {
                     <label htmlFor="subject">Subject: </label>
                     <input type="subject" name="subject" value={blogger.subject} onChange={handleChange}></input><br /><br />
                     <label htmlFor="details">Details: </label>
-                    <textarea type="text" name="details" rows="30" cols="80" value={blogger.details} onChange={handleChange}></textarea><br /><br />
-                    <input type="submit"></input>
+                    <textarea type="text" name="details" rows="20" cols="25" value={blogger.details} onChange={handleChange}></textarea><br /><br />
+                    <Button variant="warning" type="submit">Update</Button>
                 </form>
             </details>
         </>

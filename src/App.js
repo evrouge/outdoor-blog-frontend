@@ -3,13 +3,20 @@ import axios from 'axios';
 import Add from './components/Add.js'
 import Edit from './components/Edit.js'
 
+//======= Bootstrap for React imports ===================
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 //=======================================================
 //=======================================================
 const App = () => {
 
   //=========================================
   //============= Hooks =====================
+  // const [posts, setPosts] = useState([]);
   let [blog, setBlog] = useState([]);
+
 
   //=========================================
   //========== Functions ====================
@@ -34,7 +41,9 @@ const App = () => {
   // get request to api
   const getBlog = () => {
     axios.get('https://outdoor-blog.herokuapp.com/blogs').then(
-      (response) => setBlog(response.data),
+      (response) => setBlog(response.data.sort((a, b) => {
+        return b.id - a.id;
+      })),
       (err) => console.log(err)
     )
   }
@@ -46,6 +55,9 @@ const App = () => {
         getBlog();
       })
   }
+
+  //post sort function
+
 
   //========================================
   //======== Use Effect ====================
@@ -63,13 +75,21 @@ const App = () => {
         {
           blog.map((blogger) => {
             return (
-              <div className="blogger" key={blogger.id}>
-                <h4>Image: {blogger.image}</h4>
-                <h4>Subject: {blogger.subject}</h4>
-                <h4>Details: {blogger.details}</h4>
-                <Edit handleUpdate={handleUpdate} blogger={blogger} /><br />
-                <button onClick={handleDelete} value={blogger.id}>Remove Blog</button>
-              </div>
+              <>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img src={blogger.image} />
+                  <Card.Body>
+                    <Card.Title>{blogger.subject}</Card.Title>
+                    <Card.Text>
+                      <div className="blogger" key={blogger.id}>
+                        <h4>{blogger.details}</h4>
+                        <Edit handleUpdate={handleUpdate} blogger={blogger} /><br />
+                        <Button variant="danger" onClick={handleDelete} value={blogger.id}>Remove Blog</Button>
+                      </div>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </>
             )
           })
         }
@@ -79,3 +99,6 @@ const App = () => {
 }
 
 export default App;
+
+
+///variant="top" src="holder.js/100px180"
