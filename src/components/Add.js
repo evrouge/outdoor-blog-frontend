@@ -34,7 +34,7 @@ const Add = (props) => {
                 <label htmlFor="subject">Subject: </label>
                 <input type="text" value={blogger.subject} name="subject" onChange={handleChange}></input><br /><br />
                 <label htmlFor="details">Details: </label>
-                <textarea type="text" rows="20" cols="70" value={blogger.details} name="details" onChange={handleChange}></textarea><br /><br />
+                <textarea type="text" rows="10" cols="60" value={blogger.details} name="details" onChange={handleChange}></textarea><br /><br />
                 <input type="submit"></input>
             </form>
         </>

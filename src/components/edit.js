@@ -29,7 +29,8 @@ const Edit = (props) => {
     return (
         <>
             <details>
-                <summary>Edit Blog</summary>
+                {/* <Button variant="warning">Edit Blog</Button> */}
+                <summary>Edit</summary>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="image">Image: </label>
                     <input type="url" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
