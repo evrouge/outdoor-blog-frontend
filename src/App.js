@@ -22,7 +22,6 @@ const App = () => {
   // const [posts, setPosts] = useState([]);
   let [blog, setBlog] = useState([]);
 
-
   //=========================================
   //========== Functions ====================
   // delete function
@@ -65,7 +64,7 @@ const App = () => {
   //========================================
   //======== Use Effect ====================
   useEffect(() => {
-    getBlog()
+    getBlog();
   }, [])
 
   //=========================================

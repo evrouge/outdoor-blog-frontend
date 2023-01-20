@@ -10,6 +10,7 @@ const Edit = (props) => {
     //this gives it an id
     const [blogger, setBlogger] = useState({ ...props.blogger })
 
+
     //===================================================
     //============= Functions ===========================
     //handle change function
@@ -32,12 +33,12 @@ const Edit = (props) => {
                 {/* <Button variant="warning">Edit Blog</Button> */}
                 <summary>Edit</summary>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="image">Image: </label>
+                    <label htmlFor="image">Image: </label><br />
                     <input type="url" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
                     <label htmlFor="subject">Subject: </label>
                     <input type="subject" name="subject" value={blogger.subject} onChange={handleChange}></input><br /><br />
                     <label htmlFor="details">Details: </label>
-                    <textarea type="text" name="details" rows="20" cols="25" value={blogger.details} onChange={handleChange}></textarea><br /><br />
+                    <textarea type="text" name="details" rows="10" cols="25" value={blogger.details} onChange={handleChange}></textarea><br /><br />
                     <Button variant="warning" type="submit">Update</Button>
                 </form>
             </details>

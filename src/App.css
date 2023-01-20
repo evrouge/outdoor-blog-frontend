@@ -48,7 +48,11 @@ body {
   align-items: center;
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.9);
   transition: 0.5s;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
 }
+
 
 .card:hover {
   box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
@@ -67,7 +71,6 @@ summary {
 details {
   background-color: lightyellow;
 }
-
 
 
 

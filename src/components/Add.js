@@ -29,13 +29,13 @@ const Add = (props) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="image">Image: </label>
+                <h5>Image URL:</h5>
                 <input type="text" value={blogger.image} name="image" onChange={handleChange}></input><br /><br />
-                <label htmlFor="subject">Subject: </label>
+                <h5>Subject:</h5>
                 <input type="text" value={blogger.subject} name="subject" onChange={handleChange}></input><br /><br />
-                <label htmlFor="details">Details: </label>
+                <h5>Details:</h5>
                 <textarea type="text" rows="10" cols="60" value={blogger.details} name="details" onChange={handleChange}></textarea><br /><br />
-                <input type="submit"></input>
+                <input type="submit" value="Create Blog"></input>
             </form>
         </>
     )
