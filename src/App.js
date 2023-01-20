@@ -4,14 +4,13 @@ import Add from './components/Add.js'
 import Edit from './components/Edit.js'
 import './App.css'
 
-//======= Bootstrap for React imports ===================
+//=========== Bootstrap for React imports =================
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import Container from 'react-bootstrap/Container'
 
 //=======================================================
 //=======================================================
@@ -21,6 +20,7 @@ const App = () => {
   //============= Hooks =====================
   // const [posts, setPosts] = useState([]);
   let [blog, setBlog] = useState([]);
+
 
   //=========================================
   //========== Functions ====================
@@ -49,9 +49,10 @@ const App = () => {
         //sorting posts from newest to oldest
         return b.id - a.id;
       })),
-      (err) => console.log(err)
+      (err) => console.log(err),
     )
   }
+
 
   //handle update function
   const handleUpdate = (editBlogger) => {
@@ -112,6 +113,3 @@ const App = () => {
 }
 
 export default App;
-
-
-///variant="top" src="holder.js/100px180"

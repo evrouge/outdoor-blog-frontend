@@ -71,18 +71,3 @@ summary {
 details {
   background-color: lightyellow;
 }
-
-
-
-/* graveyard:
-
- .cards {
-  display: flex;
-  flex-direction: row;
-}
-
-/* width: 50%; */
-/* display: grid;
-  flex-direction: row; */
-/* flex: 1; */
-/* display: block; */

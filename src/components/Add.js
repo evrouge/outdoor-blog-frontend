@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import axios from 'axios'
 //=================================================
 //==================================================
 const Add = (props) => {
@@ -8,6 +8,7 @@ const Add = (props) => {
     //=========================================================
     //============== Hooks ====================================
     const [blogger, setBlogger] = useState(emptyBlogger);
+
 
     //=========================================================
     //================ Functions ==============================
@@ -24,6 +25,11 @@ const Add = (props) => {
         props.handleCreate(blogger)
     }
 
+    // refresh the page after submit button is clicked
+    const refreshPage = () => {
+        window.location.reload()
+    }
+
     //=======================================================
     //=======================================================
     return (
@@ -35,7 +41,7 @@ const Add = (props) => {
                 <input type="text" value={blogger.subject} name="subject" onChange={handleChange}></input><br /><br />
                 <h5>Details:</h5>
                 <textarea type="text" rows="10" cols="60" value={blogger.details} name="details" onChange={handleChange}></textarea><br /><br />
-                <input type="submit" value="Create Blog"></input>
+                <input type="submit" value="Create Blog" onClick={refreshPage}></input>
             </form>
         </>
     )

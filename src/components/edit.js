@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+//======= Bootstrap for React imports =======
 import Button from 'react-bootstrap/Button';
 
 //===========================================
@@ -9,7 +11,8 @@ const Edit = (props) => {
     //================ Hooks ==============================
     //this gives it an id
     const [blogger, setBlogger] = useState({ ...props.blogger })
-
+    // edit hook
+    const [showEdit, setShowEdit] = useState(true);
 
     //===================================================
     //============= Functions ===========================
@@ -18,33 +21,35 @@ const Edit = (props) => {
         setBlogger({ ...blogger, [event.target.name]: event.target.value })
     }
 
+
     //handle submit function
     const handleSubmit = (event) => {
         event.preventDefault();
         //pass in the state variable
-        props.handleUpdate(blogger)
+        props.handleUpdate(blogger);
+        setShowEdit(false);
     }
 
     //=======================================================
     //=======================================================
     return (
         <>
-            <details>
-                {/* <Button variant="warning">Edit Blog</Button> */}
-                <summary>Edit</summary>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="image">Image: </label><br />
-                    <input type="url" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
-                    <label htmlFor="subject">Subject: </label>
-                    <input type="subject" name="subject" value={blogger.subject} onChange={handleChange}></input><br /><br />
-                    <label htmlFor="details">Details: </label>
-                    <textarea type="text" name="details" rows="10" cols="25" value={blogger.details} onChange={handleChange}></textarea><br /><br />
-                    <Button variant="warning" type="submit">Update</Button>
-                </form>
-            </details>
+            {showEdit ?
+                <details>
+                    <summary>Edit</summary>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="image">Image: </label><br />
+                        <input type="url" name="image" value={blogger.image} onChange={handleChange}></input><br /><br />
+                        <label htmlFor="subject">Subject: </label>
+                        <input type="subject" name="subject" value={blogger.subject} onChange={handleChange}></input><br /><br />
+                        <label htmlFor="details">Details: </label>
+                        <textarea type="text" name="details" rows="10" cols="25" value={blogger.details} onChange={handleChange}></textarea><br /><br />
+                        <Button variant="warning" type="submit" onClick={() => setShowEdit(true)}>Update</Button>
+                    </form>
+                </details>
+                : <> </>}
         </>
     )
-
 }
 
 export default Edit;
