@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+
 //=================================================
 //==================================================
 const Add = (props) => {
@@ -42,7 +42,7 @@ const Add = (props) => {
                 <h5>Details:</h5>
                 <textarea type="text" rows="10" cols="60" value={blogger.details} name="details" onChange={handleChange}></textarea><br /><br />
                 <input type="submit" value="Create Blog" onClick={refreshPage}></input>
-            </form>
+            </form><hr />
         </>
     )
 

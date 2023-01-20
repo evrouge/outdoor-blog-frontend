@@ -72,7 +72,7 @@ const App = () => {
   //=========================================
   return (
     <>
-      <h1>Evin's Outdoor Blog</h1>
+      <h1>Evin's Outdoor Blog<img class="profile-pic" src="https://i.imgur.com/ihTy0QQ.jpg"></img></h1><hr />
       <Add handleCreate={handleCreate} />
       <div className="container">
         <Row sm={1} md="3" className="g-4">

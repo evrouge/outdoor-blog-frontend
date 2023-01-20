@@ -37,9 +37,13 @@
   }
 }
 
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
 /* me adding styling */
 body {
-  background-color: lightblue !important;
+  background: linear-gradient(to left top, darkblue, darkgreen) !important;
   text-align: center !important;
 }
 
@@ -50,9 +54,7 @@ body {
   transition: 0.5s;
   margin-top: 3rem;
   margin-bottom: 3rem;
-
 }
-
 
 .card:hover {
   box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
@@ -70,4 +72,27 @@ summary {
 
 details {
   background-color: lightyellow;
+}
+
+.profile-pic {
+  margin: .5rem;
+  margin-left: .9rem;
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  border: 10px dotted black;
+}
+
+h1 {
+  font-family: 'Pacifico', 'curvsive';
+  color: white;
+  text-decoration: overline underline dashed;
+}
+
+h5 {
+  color: white;
+}
+
+hr {
+  border: 2px dashed white !important;
 }
