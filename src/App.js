@@ -21,7 +21,6 @@ const App = () => {
   // const [posts, setPosts] = useState([]);
   let [blog, setBlog] = useState([]);
 
-
   //=========================================
   //========== Functions ====================
   // delete function
@@ -52,7 +51,6 @@ const App = () => {
       (err) => console.log(err),
     )
   }
-
 
   //handle update function
   const handleUpdate = (editBlogger) => {

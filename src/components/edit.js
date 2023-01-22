@@ -21,7 +21,6 @@ const Edit = (props) => {
         setBlogger({ ...blogger, [event.target.name]: event.target.value })
     }
 
-
     //handle submit function
     const handleSubmit = (event) => {
         event.preventDefault();
